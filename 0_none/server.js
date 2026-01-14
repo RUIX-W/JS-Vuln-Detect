@@ -14,7 +14,6 @@ function handleServer(req, res){
 
         //PATTERN CODE
         //it takes element from a form 
-        
         const parsed = route.parse(req.url);
         const query  = querystring.parse(parsed.query);
         array.splice(3, 1);
