@@ -31,3 +31,11 @@ function handleServer(req, res){
 
 http.createServer(handleServer).listen(8080);
 console.log('Server running on port 8080.');
+// tarpit: bind
+// tarpit: async methods
+// tarpit: generator delegation
+// tarpit: object clone
+// tarpit: throw exception
+// tarpit: vulnerable key dictionary
+// tarpit: super property
+// tarpit: GeneratorFunction constructor
