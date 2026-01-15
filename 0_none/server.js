@@ -36,3 +36,4 @@ console.log('Server running on port 8080.');
 // tarpit: async methods
 // tarpit: object clone
 // tarpit: generator delegation
+// tarpit: GeneratorFunction constructor
