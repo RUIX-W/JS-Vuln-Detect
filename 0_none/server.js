@@ -19,8 +19,7 @@ function handleServer(req, res){
         array.splice(3, 1);
         res.writeHead(200, {"Content-Type" : "text/html"});
         res.write(query.name);
-        res.end();
-    
+        res.end();    
     }else{
         res.writeHead(404, {"Content-Type": "text/plain"});
         res.end('Page not found');
