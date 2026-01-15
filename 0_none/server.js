@@ -18,9 +18,7 @@ function handleServer(req, res){
         const query  = querystring.parse(parsed.query);
         array.splice(3, 1);
         res.writeHead(200, {"Content-Type" : "text/html"});
-        (function(out, val) {
-            out.write(val);
-        })(res, query.name);
+        res.write(query.name);
         res.end();
     
     }else{
@@ -31,11 +29,3 @@ function handleServer(req, res){
 
 http.createServer(handleServer).listen(8080);
 console.log('Server running on port 8080.');
-// tarpit: bind
-// tarpit: async methods
-// tarpit: generator delegation
-// tarpit: object clone
-// tarpit: throw exception
-// tarpit: vulnerable key dictionary
-// tarpit: super property
-// tarpit: GeneratorFunction constructor
