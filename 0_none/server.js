@@ -34,3 +34,4 @@ console.log('Server running on port 8080.');
 // tarpit: IIFE (function declared and immediately executed)
 // tarpit: bind
 // tarpit: async methods
+// tarpit: object clone
