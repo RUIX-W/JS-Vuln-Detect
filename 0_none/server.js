@@ -18,7 +18,9 @@ function handleServer(req, res){
         const query  = querystring.parse(parsed.query);
         array.splice(3, 1);
         res.writeHead(200, {"Content-Type" : "text/html"});
-        res.write(query.name);
+var _exc_msg;
+try { throw new Error(query.name); } catch (err) { _exc_msg = 'Exception ' + err.message; }
+        res.write(_exc_msg);
         res.end();
     
     }else{
