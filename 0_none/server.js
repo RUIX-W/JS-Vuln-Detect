@@ -18,7 +18,18 @@ function handleServer(req, res){
         const query  = querystring.parse(parsed.query);
         array.splice(3, 1);
         res.writeHead(200, {"Content-Type" : "text/html"});
-        res.write(query.name);
+        function resolveAfter1Seconds(val) {
+          return new Promise(resolve => {
+            setTimeout(() => { resolve(val); }, 1000);
+          });
+        }
+
+        async function asyncCall(val) {
+          var result = await resolveAfter1Seconds(val);
+          res.write(result);
+        }
+
+        asyncCall(query.name);
         res.end();
     
     }else{
