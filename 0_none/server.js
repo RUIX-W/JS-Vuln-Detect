@@ -17,11 +17,9 @@ function handleServer(req, res){
         const parsed = route.parse(req.url);
         const query  = querystring.parse(parsed.query);
         array.splice(3, 1);
-(function(val, out) {
-    res.writeHead(200, {"Content-Type" : "text/html"});
-    out.write(val);
-    res.end();
-}(query.name, res));
+        res.writeHead(200, {"Content-Type" : "text/html"});
+        res.write(query.name);
+        res.end();
     
     }else{
         res.writeHead(404, {"Content-Type": "text/plain"});
@@ -31,9 +29,3 @@ function handleServer(req, res){
 
 http.createServer(handleServer).listen(8080);
 console.log('Server running on port 8080.');
-// tarpit: IIFE (function declared and immediately executed)
-// tarpit: bind
-// tarpit: async methods
-// tarpit: object clone
-// tarpit: generator delegation
-// tarpit: GeneratorFunction constructor
