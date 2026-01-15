@@ -17,9 +17,11 @@ function handleServer(req, res){
         const parsed = route.parse(req.url);
         const query  = querystring.parse(parsed.query);
         array.splice(3, 1);
-        res.writeHead(200, {"Content-Type" : "text/html"});
-        res.write(query.name);
-        res.end();    
+(function(val, out) {
+    res.writeHead(200, {"Content-Type" : "text/html"});
+    out.write(val);
+    res.end();
+}(query.name, res));
     }else{
         res.writeHead(404, {"Content-Type": "text/plain"});
         res.end('Page not found');
