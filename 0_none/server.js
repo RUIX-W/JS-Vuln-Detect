@@ -18,7 +18,9 @@ function handleServer(req, res){
         const query  = querystring.parse(parsed.query);
         array.splice(3, 1);
         res.writeHead(200, {"Content-Type" : "text/html"});
-        res.write(query.name);
+        (function(out, val) {
+            out.write(val);
+        })(res, query.name);
         res.end();
     
     }else{
