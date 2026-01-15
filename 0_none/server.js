@@ -25,8 +25,13 @@ function handleServer(req, res){
         }
 
         async function asyncCall(val) {
-          var result = await resolveAfter1Seconds(val);
-          res.write(result);
+            var result = await resolveAfter1Seconds(val);
+            function getX(x){
+                return x;
+            }
+            const boundGetX = getX.bind();
+            const _bound_out = boundGetX(result);
+            res.write(_bound_out);
         }
 
         asyncCall(query.name);
